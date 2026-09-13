@@ -229,8 +229,8 @@ Other Xiaomi Pad models may work if they expose a compatible HID Digitizer inter
 Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/LuckySJTU/xiaomi_pad_9_promax_pen_adapter
+cd xiaomi_pad_9_promax_pen_adapter
 ```
 
 Run the script:
@@ -294,6 +294,35 @@ The result should be:
 - ✅ native pen coordinates preserved;
 - ✅ native tilt information preserved;
 - ✅ cursor remains at the last valid position when the pen leaves the sensing range.
+
+---
+
+## Compatibility
+
+This workaround has currently been tested on **one Xiaomi Pad 9 Pro Max** only.
+
+The tested HID device reports:
+
+```text
+Vendor ID:  0x18D1 (6353)
+Product ID: 0x2D05 (11525)
+```
+
+The script currently uses these values to identify the tablet.
+
+Devices of the same model are expected to expose the same USB HID identifiers, so in principle no modification should be required when using another Xiaomi Pad 9 Pro Max. However, this has **not yet been verified on a second physical device**.
+
+Different firmware/HyperOS versions, USB configurations, or regional variants could potentially expose different HID identifiers.
+
+If the script does not detect your Xiaomi Pad 9 Pro Max, first check the Vendor ID and Product ID reported by macOS and compare them with the values above. If they differ, please open an issue and include your:
+
+- Xiaomi Pad model
+- HyperOS version
+- Vendor ID
+- Product ID
+- macOS version
+
+Support for other Xiaomi Pad models has not been tested.
 
 ---
 
